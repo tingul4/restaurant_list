@@ -62,11 +62,13 @@ header {
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
+  text-decoration: none;
 }
 
 .restaurant-category {
   color: #666666;
   font-size: 0.8rem;
+  text-decoration: none;
 }
 
 .restaurant-show-title {
