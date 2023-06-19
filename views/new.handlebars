@@ -1,0 +1,45 @@
+<div class="container">
+  <form action="/restaurants/new" method="POST">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" required="true">
+    </div>
+    <div class="mb-3">
+      <label for="name_en" class="form-label">Name_EN</label>
+      <input type="text" class="form-control" id="name_en" name="name_en">
+    </div>
+    <div class="mb-3">
+      <label for="category" class="form-label">Category</label>
+      <input type="text" class="form-control" id="category" name="category" required="true">
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Image source</label>
+      <input type="text" class="form-control" id="image" name="image" required="true">
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input type="text" class="form-control" id="location" name="location" required="true">
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone</label>
+      <input type="text" class="form-control" id="phone" name="phone" required="true">
+    </div>
+    <div class="mb-3">
+      <label for="google_map" class="form-label">Google_map</label>
+      <input type="text" class="form-control" id="google_map" name="google_map" required="true">
+    </div>
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating</label>
+      <input type="number" class="form-control" id="rating" name="rating" required="true">
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input type="text" class="form-control" id="description" name="description" required="true">
+    </div>
+    {{!-- <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div> --}}
+    <button type="submit" class="btn btn-primary">Edit</button>
+  </form>
+</div>
