@@ -39,10 +39,10 @@
         Sort
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="/sort/asc">A -> Z</a></li>
-        <li><a class="dropdown-item" href="/sort/desc">Z -> A</a></li>
-        <li><a class="dropdown-item" href="/sort/category">類別</a></li>
-        <li><a class="dropdown-item" href="/sort/location">地區</a></li>
+        <li><a class="dropdown-item" href="?sort=asc&type=name{{#if keyword}}&keyword={{keyword}}{{/if}}">A -> Z</a></li>
+        <li><a class="dropdown-item" href="?sort=desc&type=name{{#if keyword}}&keyword={{keyword}}{{/if}}">Z -> A</a></li>
+        <li><a class="dropdown-item" href="?sort=asc&type=category{{#if keyword}}&keyword={{keyword}}{{/if}}">類別</a></li>
+        <li><a class="dropdown-item" href="?sort=asc&type=location{{#if keyword}}&keyword={{keyword}}{{/if}}">地區</a></li>
       </ul>
     </div>
   </div>
