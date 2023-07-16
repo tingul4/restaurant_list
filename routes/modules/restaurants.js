@@ -1,14 +1,15 @@
 const express = require('express')
 const Restaurant = require('../../models/restaurant')
+const restaurant = require('../../models/restaurant')
 
 const router = express.Router()
 
 router.delete('/:id', (req, res) => {
-  const id = req.params.id
-  
-  return Restaurant.findByIdAndRemove(id)
+  const _id = req.params.id
+  const userId = req.user._id
+  return Restaurant.deleteOne({ _id, userId })
           .then(() => res.redirect('/'))
-          .catch(error => console.error(error))
+          .catch(error => console.log(error))
 })
 
 router.get('/new', (req, res) => {
@@ -17,35 +18,35 @@ router.get('/new', (req, res) => {
 
 router.post('/new', (req, res) => {
   const editInfo = req.body
-
-  return Restaurant.create(editInfo)
+  const userId = req.user._id
+  return Restaurant.create({ ...editInfo, userId })
           .then(() => res.redirect('/'))
-          .catch(error => console.error(error))
+          .catch(error => console.log(error))
 })
 
-router.get('/:restaurant_id', (req, res) => {  
-  const id = req.params.restaurant_id
-
-  return Restaurant.findById(id)
+router.get('/:id', (req, res) => {  
+  const _id = req.params.id
+  const userId = req.user._id
+  return Restaurant.findOne({ _id, userId })
           .lean()
           .then(restaurant => res.render('show', { restaurant }))
-          .catch(error => console.error(error))
+          .catch(error => console.log(error))
 })
 
 router.get('/:id/edit', (req, res) => {
-  const id = req.params.id
-
-  return Restaurant.findById(id)
+  const _id = req.params.id
+  const userId = req.user._id
+  return Restaurant.findOne({ _id, userId })
           .lean()
           .then(restaurant => res.render('edit', { restaurant }))
-          .catch(error => console.error(error))
+          .catch(error => console.log(error))
 })
 
 router.put('/:id', (req, res) => {
-  const id = req.params.id
+  const _id = req.params.id
+  const userId = req.user._id
   const editInfo = req.body
-
-  return Restaurant.findById(id)
+  return Restaurant.findOne({ _id, userId })
           .then(restaurant => {
             for (let info in editInfo) {
               if (!editInfo[info]) continue
@@ -54,7 +55,7 @@ router.put('/:id', (req, res) => {
             return restaurant.save()
           })
           .then(() => res.redirect(`/restaurants/${id}`))
-          .catch(error => console.error(error))
+          .catch(error => console.log(error))
 })
 
 module.exports = router
