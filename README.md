@@ -12,9 +12,7 @@ git clone https://github.com/tingul4/restaurant_list.git <project_name>
 cd <project_name>
 npm install
 ```
-- connect to MongoDB
-  - Create .env
-  - Add <ins>MONGODB_URI=mongodb+srv://[username]:[userpassword]@cluster0.yfngob9.mongodb.net/restaurant_list?retryWrites=true&w=majority</ins> in .env
+- reference .env.example and build your environment variable in .env
 - Add seeds to database
 ```
 npm run seed
