@@ -12,7 +12,7 @@ git clone https://github.com/tingul4/restaurant_list.git <project_name>
 cd <project_name>
 npm install
 ```
-- reference .env.example and build your environment variable in .env
+- Reference .env.example and build your environment variable in .env
 - Add seeds to database
 ```
 npm run seed
