@@ -20,7 +20,7 @@
     
     {{!-- sort --}}
     <div class="dropdown-center">
-      <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Sort
       </button>
       <ul class="dropdown-menu">
@@ -38,7 +38,7 @@
   <div class="mt-5">
     <div class="row">
       <div class="col-md-10 col-12 mx-auto">
-        <a href="/restaurants/new" class="p-2 border border-primary text-decoration-none">Create</a>
+        <a href="/restaurants/new" class="btn btn-primary">Create</a>
         <div class="row row-cols-sm-3">
           {{#each restaurants}}
           <div>
@@ -60,10 +60,10 @@
               </div>
             </a>
             <div class="d-flex justify-content-end">
-              <a href="/restaurants/{{ this._id }}/edit" class="my-auto mx-2">Edit</a>
-              <a href="/restaurants/{{ this._id }}" class="my-auto mx-2">Detail</a>
+              <a href="/restaurants/{{ this._id }}/edit" class="my-2 me-2 btn btn-primary">Edit</a>
+              <a href="/restaurants/{{ this._id }}" class="my-2 me-2 btn btn-primary">Detail</a>
               <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST">
-                <button type="submit" class="btn btn-outline-danger m-1">Delete</button>
+                <button type="submit" class="my-2 btn btn-danger">Delete</button>
               </form>
             </div>
           </div>
